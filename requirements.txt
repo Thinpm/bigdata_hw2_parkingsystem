@@ -1,0 +1,8 @@
+# Requirements cho hệ thống tính tiền đỗ xe real-time
+
+# Kafka Python client (cho Producer và Consumer)
+kafka-python>=2.0.2
+
+# GUI dependencies (Tkinter thường đã có sẵn trong Python, nhưng nếu thiếu có thể cần cài thêm)
+# tkinter không cần install qua pip trên hầu hết hệ thống
+

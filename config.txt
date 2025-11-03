@@ -1,0 +1,23 @@
+# Cấu hình IP cho hệ thống 3 máy
+
+# MÁY 1: PRODUCER (Camera AI Simulator)
+MÁY_1_IP=192.168.80.116
+
+# MÁY 2: KAFKA + SPARK (Processing Server)
+MÁY_2_IP=192.168.80.212
+KAFKA_BROKER=192.168.80.212:9092
+
+# MÁY 3: GUI CONSUMER (Display Client)
+MÁY_3_IP=192.168.80.67
+
+# Các lệnh chạy:
+
+# Trên Máy 1 (192.168.80.116):
+# python parking_json_stream.py --kafka-broker 192.168.80.212:9092
+
+# Trên Máy 2 (192.168.80.212):
+# spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --master local[*] parking_spark_streaming.py
+
+# Trên Máy 3 (192.168.80.67):
+# python parking_gui_consumer.py --kafka-broker 192.168.80.212:9092
+
